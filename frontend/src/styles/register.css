@@ -1,0 +1,276 @@
+/* Register.css - Maroon & Yellow Theme */
+
+.register-container {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #800020 0%, #a0002a 100%);
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.register-title {
+  color: #ffd700;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.register-subtitle {
+  color: #6c757d;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.register-form {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
+  backdrop-filter: blur(10px);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #800020;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #ffd700;
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+}
+
+.form-input:disabled {
+  background: #f8f9fa;
+  cursor: not-allowed;
+}
+
+.form-input::placeholder {
+  color: #adb5bd;
+}
+
+.error-message {
+  background: rgba(220, 53, 69, 0.1);
+  border: 1px solid rgba(220, 53, 69, 0.3);
+  color: #dc3545;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.register-button {
+  width: 100%;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #800020, #a00030);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.register-button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #a00030, #800020);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(128, 0, 32, 0.3);
+}
+
+.register-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.register-footer {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.register-footer p {
+  margin: 8px 0;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #ffd700;
+  cursor: pointer;
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.link-button:hover {
+  color: #800020;
+}
+
+.demo-note {
+  font-size: 0.8rem !important;
+  color: #adb5bd !important;
+  font-style: italic;
+  margin-top: 15px !important;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .register-container {
+    padding: 15px;
+    min-height: 100vh;
+  }
+
+  .register-title {
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+
+  .register-form {
+    padding: 30px 25px;
+    border-radius: 12px;
+  }
+
+  .form-input {
+    padding: 10px 12px;
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  .register-button {
+    padding: 12px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-container {
+    padding: 30px 20px;
+    margin: 10px;
+  }
+  
+  .register-title {
+    font-size: 1.8rem;
+  }
+  
+  .register-subtitle {
+    font-size: 0.9rem;
+  }
+  
+  .form-input {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+/* Landscape orientation on mobile */
+@media (max-height: 600px) and (orientation: landscape) {
+  .register-container {
+    min-height: auto;
+    padding: 20px 10px;
+  }
+
+  .register-title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+
+  .register-form {
+    padding: 20px;
+  }
+}
+
+/* Additional styles for better mobile experience */
+@media (hover: none) and (pointer: coarse) {
+  .form-input:hover {
+    border-color: #e0e0e0;
+  }
+  
+  .register-button:hover {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    transform: none;
+    box-shadow: none;
+  }
+  
+  .link-button:hover {
+    color: #ffd700;
+    text-decoration: underline;
+  }
+}
+
+/* Loading Animation */
+.register-button:disabled::after {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-left: 8px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Form Validation Styles */
+.form-input:invalid:not(:placeholder-shown) {
+  border-color: #dc3545;
+}
+
+.form-input:valid:not(:placeholder-shown) {
+  border-color: #28a745;
+}
+
+/* Password Strength Indicator */
+.password-strength {
+  margin-top: 5px;
+  font-size: 0.8rem;
+}
+
+.password-strength.weak {
+  color: #dc3545;
+}
+
+.password-strength.medium {
+  color: #ffc107;
+}
+
+.password-strength.strong {
+  color: #28a745;
+}
